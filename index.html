@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>还款计算器WBV1.2</title>
+    <title>还款计算器WBV1.3</title>
     <style type="text/css">
         #picture {
             margin: 0 auto;
@@ -56,6 +56,8 @@
             {rate=23.97/100/12}
             if (rate=="有公积金-优质单位")
             {rate=22.68/100/12}
+            if (rate=="其他-有房贷（业主专案）")
+            {rate=26.28/100/12}
             var month = document.getElementById("month").value;
             var benxi = (
                 (money * rate * (1 + rate) ** month) /
@@ -84,7 +86,9 @@
         <option value="有房贷-优质单位">有房贷-优质单位</option>
         <option value="有房贷-普通单位A">有房贷-普通单位A</option>
         <option value="有房贷-普通单位B">有房贷-普通单位B</option>
-    <option value="有公积金-优质单位">有公积金-优质单位</option></select>
+        <option value="有公积金-优质单位">有公积金-优质单位</option>
+        <option value="其他-有房贷（业主专案）">其他-有房贷（业主专案）</option>
+</select>
     <p></p>
     <input class="input_title" readonly="readonly" value="3.贷款期限（月）："/><select class="input_text" id="month" value="36">
     <option value="6">6个月</option>
